@@ -33,6 +33,29 @@
   .explain {
     font-size: 0.5rem;
   }
+
+  .gdpr-container {
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+
+    input {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .action-container {
+    width: 100%;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .error {
+      color: red;
+      font-size: 0.75rem;
+    }
+  }
 }
 
 @media only screen and (max-width: 340px) {

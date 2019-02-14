@@ -5,7 +5,10 @@
   align-items: center;
 
   .luna {
-    margin-bottom: 1.5rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -1em;
   }
 
   .title {
@@ -20,9 +23,32 @@
     padding: 0 3rem;
   }
 
+  .tx-details {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tx-details,
   .description,
   .input,
   .button {
     margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .thanks-container {
+    .title {
+      font-size: 1.4rem;
+      z-index: 3;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .button {
+      margin-bottom: 1rem;
+    }
   }
 }

@@ -29,37 +29,37 @@ export default class Review extends React.Component<any, State> {
 
     return (
       <div className='review-container'>
-        <div className='flex-grow-container'>
-          <div className='title-container'>
-            <div className='back-button' onClick={onBack}>{'<'}</div>
-            <div className='title flex-grow-container'>
-              <div>{`Oooo a ${type}?`}</div>
-              <div>{'Good choice!'}</div>
-            </div>
+        <div className='title-container'>
+          <div className='back-button' onClick={onBack}>{'<'}</div>
+          <div className='title flex-grow-container'>
+            <div>{`Oooo a ${type}?`}</div>
+            <div>{'Good choice!'}</div>
           </div>
+        </div>
+        <div className='flex-grow-container'>
           <div className='item-preview'>
             <img src={imageURL} />
           </div>
           <div className='description'>
             {description}
           </div>
-        </div>
-        <div className='price-summary'>
-          <div className='row'>
-            <div className='flex-grow-container'>
-              {title}
+          <div className='price-summary'>
+            <div className='row'>
+              <div className='flex-grow-container'>
+                {title}
+              </div>
+              {`${price} GAS`}
             </div>
-            {`${price} GAS`}
-          </div>
-          <div className='row'>
-            <div className='flex-grow-container'>
-              {`${Math.round(discount * 100)}% discount applied`}
+            <div className='row'>
+              <div className='flex-grow-container'>
+                {`${Math.round(discount * 100)}% discount applied`}
+              </div>
+              {amountSaved}
             </div>
-            {amountSaved}
           </div>
-        </div>
-        <div className='total'>
-          {`${discountedPrice} GAS`}
+          <div className='total'>
+            {`${discountedPrice} GAS`}
+          </div>
         </div>
         {
           error ?
@@ -76,7 +76,7 @@ export default class Review extends React.Component<any, State> {
     .then(onSubmit)
     .catch(err => {
       this.setState({error: 'There was an error processing your payment, please try again.'});
-      setTimeout(() => this.setState({error: null}), 3500);
+      setTimeout(() => this.setState({error: null}), 2500);
     });
   }
 }
