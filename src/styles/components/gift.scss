@@ -1,0 +1,47 @@
+.gift-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .description {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .action-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .emoji {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+
+  .coupon {
+    background-image: url('../assets/images/discount_ticket.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    .coupon-text {
+      transform: rotate(45deg);
+      transform: rotate(-10.5deg);
+      font-size: 1.5rem;
+    }
+  }
+
+  .open-box-img {
+    max-width: 90%;
+    margin-bottom: 2rem;
+  }
+}
