@@ -20,7 +20,7 @@ export default class Welcome extends React.Component<any, any> {
             <div className='row'>{`at NEO DevCon 2019`}</div>
           </div>
         </div>
-        <div className='description'>{`Enter tour email to win`}</div>
+        <div className='description'>{`Enter your email to win`}</div>
         <input
           ref={ref => this.inputEle = ref}
           className='input'

@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  background-image: radial-gradient(circle at top, #45C2FF 0%, #218FFF 100%);
+  color: white;
+  font-family: 'asap', 'lato', sans-serif, "Helvetica", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 1px
 }
 
 #app {
@@ -19,9 +24,10 @@ body {
   width: 100%;
   text-align: center;
   box-sizing: border-box;
+  font-weight: 600;
 
   &.confirm {
-    background-color: limegreen;
+    background-color: #7ED321;
   }
 }
 
@@ -34,10 +40,22 @@ body {
 
 .input {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
   border-radius: 0.5rem;
   padding: 1rem;
   box-sizing: border-box;
   outline: none;
   margin-bottom: 0.75rem;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2em;
+
+}
+
+.title {
+  font-weight: 600;
 }
