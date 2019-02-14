@@ -7,7 +7,7 @@
   }
 
   .description {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
   }
 
@@ -25,15 +25,15 @@
 
     .title,
     .description {
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
     }
 
     .title {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
 
     .description {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
 
     .price-container {
@@ -41,18 +41,52 @@
       align-items: flex-end;
 
       .price {
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1rem;
+        font-weight: 600;
       }
 
       .savings {
         margin-left: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
       }
     }
 
     .item-preview {
       height: 100%;
     }
+
+    @media only screen and (max-width: 340px) {
+      .description {
+        font-size: .7rem;
+      }
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .price-container {
+        display: flex;
+        align-items: flex-end;
+  
+        .price {
+          font-size: .7rem;
+          line-height: 1rem;
+          font-weight: 600;
+        }
+  
+        .savings {
+          margin-left: 0.5rem;
+          font-size: 0.6rem;
+        }
+        
+      }
+
+      .item-preview {
+        margin-top: .5rem;
+        height: 80%;
+      }
+    }
+
   }
+  
 }
