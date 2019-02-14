@@ -5,7 +5,10 @@
   align-items: center;
 
   .luna {
-    margin-bottom: 1.3rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -2em;
   }
 
   .title {
@@ -25,5 +28,20 @@
   .input,
   .button {
     margin-bottom: 1.5rem;
+  }
+
+  @media only screen and (max-width: 340px) {
+    .title {
+      font-size: 1.4rem;
+      z-index: 3;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .button {
+      margin-bottom: 1rem;
+    }
   }
 }
