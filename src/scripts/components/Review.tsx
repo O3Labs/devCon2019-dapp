@@ -53,7 +53,7 @@ export default class Review extends React.Component<any, State> {
           </div>
           <div className='row'>
             <div className='flex-grow-container'>
-              {`${discount * 100}% discount applied`}
+              {`${Math.round(discount * 100)}% discount applied`}
             </div>
             {amountSaved}
           </div>

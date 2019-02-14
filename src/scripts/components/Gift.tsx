@@ -65,9 +65,11 @@ export default class Gift extends React.Component<any, State> {
     const animationData = status === Status.OPENING ? giftAnimationData : smokeAnimationData;
     const clickAction = status === Status.OPENING ?
       () => {
+        const discount = Math.floor(Math.random() *  100) / 100;
+        console.log(discount);
         this.setState({
           status: Status.SMOKE,
-          discount: Math.floor(Math.random() *  100) / 100,
+          discount,
         });
         setTimeout(() => {
           this.setState({ status: Status.CLAIMABLE });
@@ -86,12 +88,12 @@ export default class Gift extends React.Component<any, State> {
 
   renderGiftOpen() {
     const { discount } = this.state;
-
+    console.log(discount * 100);
     return (
       <div className='gift-open-container'>
         <div className='emoji'>🎉</div>
         <div className='coupon'>
-          <div className='coupon-text'>{`${discount * 100}% OFF!`}</div>
+          <div className='coupon-text'>{`${Math.round(discount * 100)}% OFF!`}</div>
         </div>
         <img
           className='open-box-img'
