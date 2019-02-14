@@ -11,7 +11,6 @@ enum Status {
   SMOKE,
   CLAIMABLE,
 }
-// style={{display: Status.CLAIMABLE ? 'None' : 'Block'}}
 
 interface State {
   status: Status;

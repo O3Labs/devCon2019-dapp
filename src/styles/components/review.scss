@@ -66,23 +66,26 @@
     font-weight: 500;
     font-size: 1.1rem;
   }
+}
 
-  @media only screen and (max-width: 340px) {
+@media only screen and (max-width: 340px) {
+  .review-container {
+
     .title-container {
       position: relative;
       font-size: 1.5rem;
-  
+
       .back-button {
         position: absolute;
         top: 0;
         left: 0;
         font-weight: 600;
       }
-  
+
       .title {
         text-align: center;
-        margin-bottom: .8rem;
-  
+        margin-bottom: 0.8rem;
+
         div {
           margin-bottom: 0.5rem;
         }
@@ -96,14 +99,13 @@
 
     .price-summary {
       margin-bottom: 0.5rem;
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: 600;
-  
+
       .row {
         display: flex;
         margin-bottom: 0.5rem;
       }
     }
-
   }
 }

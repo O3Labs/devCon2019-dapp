@@ -56,37 +56,43 @@
       height: 100%;
     }
 
-    @media only screen and (max-width: 340px) {
-      .description {
-        font-size: .7rem;
-      }
-      .title {
-        font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (max-width: 340px) {
+
+  .product-list .item {
+
+    .description {
+      font-size: 0.7rem;
+    }
+
+    .title {
+      font-size: 1.2rem;
+    }
+
+    .price-container {
+      display: flex;
+      align-items: flex-end;
+
+      .price {
+        font-size: 0.7rem;
+        line-height: 1rem;
+        font-weight: 600;
       }
 
-      .price-container {
-        display: flex;
-        align-items: flex-end;
-  
-        .price {
-          font-size: .7rem;
-          line-height: 1rem;
-          font-weight: 600;
-        }
-  
-        .savings {
-          margin-left: 0.5rem;
-          font-size: 0.6rem;
-        }
-        
+      .savings {
+        margin-left: 0.5rem;
+        font-size: 0.6rem;
       }
 
-      .item-preview {
-        margin-top: .5rem;
-        height: 80%;
-      }
+    }
+
+    .item-preview {
+      margin-top: 0.5rem;
+      height: 80%;
     }
 
   }
-  
 }

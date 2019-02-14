@@ -54,8 +54,10 @@
     height: 100%;
     width: 100%;
   }
+}
 
-  @media only screen and (max-width: 340px) {
+@media only screen and (max-width: 340px) {
+  .gift-container {
     .description {
       font-size: 1.5rem;
     }
