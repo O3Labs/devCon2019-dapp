@@ -4,6 +4,7 @@ const smokeAnimationData = require('../../assets/animations/smoke.json');
 const giftAnimationData = require('../../assets/animations/giftbox_bounce.json');
 const openBoxImg = require('../../assets/images/img_openBox_confetti.png');
 import Confetti from './Confetti';
+import { DISCOUNTS } from '../constants';
 
 enum Status {
   OPENING,
@@ -65,8 +66,7 @@ export default class Gift extends React.Component<any, State> {
     const animationData = status === Status.OPENING ? giftAnimationData : smokeAnimationData;
     const clickAction = status === Status.OPENING ?
       () => {
-        const discount = Math.floor(Math.random() *  100) / 100;
-        console.log(discount);
+        const discount = DISCOUNTS[Math.floor(Math.random() * 4)];
         this.setState({
           status: Status.SMOKE,
           discount,
@@ -88,7 +88,6 @@ export default class Gift extends React.Component<any, State> {
 
   renderGiftOpen() {
     const { discount } = this.state;
-    console.log(discount * 100);
     return (
       <div className='gift-open-container'>
         <div className='emoji'>🎉</div>

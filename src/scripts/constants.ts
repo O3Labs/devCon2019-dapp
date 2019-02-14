@@ -32,3 +32,5 @@ export const SALES_ITEMS = [
     type: 'sticker',
   },
 ];
+
+export const DISCOUNTS = [0.25, 0.5, 0.75, 0.95];
