@@ -1,9 +1,21 @@
 import * as React from 'react';
+import { send } from '../utils/dapi';
 
-export default class Review extends React.Component<any, any> {
+interface State {
+  error: string;
+}
+
+const initialState = {
+  error: null,
+};
+
+export default class Review extends React.Component<any, State> {
+
+  state = initialState;
 
   render() {
-    const { item, discount, onBack, onSubmit } = this.props;
+    const { item, discount, onBack } = this.props;
+    const { error } = this.state;
     const {
       type,
       title,
@@ -49,8 +61,22 @@ export default class Review extends React.Component<any, any> {
         <div className='total'>
           {`${discountedPrice} GAS`}
         </div>
-        <div className='button confirm' onClick={onSubmit}>{`PAY NOW`}</div>
+        {
+          error ?
+            <div className='error'>{error}</div> :
+            <div className='button confirm' onClick={() => this.handleSubmit(discountedPrice)}>{`PAY NOW`}</div>
+        }
       </div>
     );
+  }
+
+  handleSubmit(amount) {
+    const { onSubmit } = this.props;
+    send(amount)
+    .then(onSubmit)
+    .catch(err => {
+      this.setState({error: 'There was an error processing your payment, please try again.'});
+      setTimeout(() => this.setState({error: null}), 3500);
+    });
   }
 }

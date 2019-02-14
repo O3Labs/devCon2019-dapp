@@ -28,7 +28,7 @@ export const SALES_ITEMS = [
     promoDescription: 'Laptop need a little flair? Grab a Luna Sticker!',
     description: 'Made from the best sticker ingredients, Luna O3 will look great anywhere.',
     imageURL: require('../assets/images/luna_sticker.png'),
-    price: '.5',
+    price: '0.5',
     type: 'sticker',
   },
 ];

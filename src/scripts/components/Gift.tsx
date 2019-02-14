@@ -3,12 +3,14 @@ import Lottie from 'react-lottie';
 const smokeAnimationData = require('../../assets/animations/smoke.json');
 const giftAnimationData = require('../../assets/animations/giftbox_bounce.json');
 const openBoxImg = require('../../assets/images/img_openBox_confetti.png');
+import Confetti from './Confetti';
 
 enum Status {
   OPENING,
   SMOKE,
   CLAIMABLE,
 }
+// style={{display: Status.CLAIMABLE ? 'None' : 'Block'}}
 
 interface State {
   status: Status;
@@ -95,6 +97,7 @@ export default class Gift extends React.Component<any, State> {
           className='open-box-img'
           src={openBoxImg}
         />
+        <Confetti/>
       </div>
     );
   }

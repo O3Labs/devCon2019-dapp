@@ -13,6 +13,7 @@
     width: 100%;
     text-align: center;
     margin-bottom: 1rem;
+    z-index: 1;
   }
 
   .emoji {
@@ -43,5 +44,13 @@
   .open-box-img {
     max-width: 90%;
     margin-bottom: 2rem;
+  }
+
+  #confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 }

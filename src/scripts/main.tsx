@@ -20,12 +20,16 @@ interface State {
   status: Status;
   discount: number;
   item: any;
+  address: string;
+  txid: string;
 }
 
 const initialState = {
   status: Status.WELCOME,
   discount: null,
   item: null,
+  address: null,
+  txid: null,
 };
 
 class Main extends React.Component<any, State> {
@@ -33,7 +37,7 @@ class Main extends React.Component<any, State> {
   state = initialState;
 
   render() {
-    const { status, item, discount } = this.state;
+    const { status, item, discount, address, txid } = this.state;
 
     switch (status) {
       case Status.WELCOME:
@@ -52,12 +56,20 @@ class Main extends React.Component<any, State> {
           <Review
             item={item}
             discount={discount}
-            onSubmit={() => this.setState({status: Status.THANKS})}
+            onSubmit={({address, txid}) => this.setState({status: Status.THANKS, address, txid})}
             onBack={() => this.setState({status: Status.PRODUCT_LIST, item: null})}
           />
         );
       case Status.THANKS:
-        return <Thanks onSubmit={() => this.setState({status: Status.WELCOME, item: null, discount: null})}/>;
+        return (
+          <Thanks
+            address={address}
+            txid={txid}
+            item={item}
+            discount={discount}
+            onSubmit={() => this.setState({...initialState, status: Status.GIFT})}
+          />
+        );
       default:
         return '';
     }
