@@ -9,13 +9,13 @@ export function send(amount: string): Promise<any> {
     return o3dapi.NEO.send({
       fromAddress: address,
       // TODO add back in before prod
-      // toAddress: 'AJ4tAoiRccsSfjgYMqFu9yq9vh5qQUKF9T',
-      toAddress: address,
+      toAddress: 'AZQfd4GAajyXAHHJ6hpL6cALSoVZjmWNq1',
+      // toAddress: address,
       asset: 'GAS',
       amount: amount.toString(),
       remark: 'O3CAP',
       // TODO add back in before prod
-      // fee: '0.0011',
+      fee: '0.0011',
       network: 'MainNet',
     })
     .then(({txid}) => ({address, txid}));

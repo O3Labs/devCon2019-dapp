@@ -57,7 +57,7 @@ export default class Welcome extends React.Component<any, State> {
     const { error } = this.state;
 
     return (
-      <div className='welcome-container'>
+      <form className='welcome-container' onSubmit={e => this.handleSubmit(e)}>
         <div className='flex-grow-container'>
           <div className='description'>{`Enter your details to win`}</div>
 
@@ -66,6 +66,7 @@ export default class Welcome extends React.Component<any, State> {
             <input
               ref={ref => this.nameInputEle = ref}
               className='input'
+              name='name'
               type='text'
               placeholder={'Your name'}
             />
@@ -76,9 +77,20 @@ export default class Welcome extends React.Component<any, State> {
             <input
               ref={ref => this.emailInputEle = ref}
               className='input'
+              name='email'
               type='text'
               placeholder={'Your email address'}
             />
+          </div>
+
+          <div className='gdpr-container'>
+            <input
+              ref={ref => this.gdprInputEle = ref}
+              name='gdpr'
+              type='checkbox'
+              className='gdpr'
+            />
+            <div>{'Accept'}</div>
           </div>
 
           <div className='explain row'>
@@ -87,28 +99,23 @@ export default class Welcome extends React.Component<any, State> {
           <div className='explain row'>
             <strong>What to expect</strong>: If you wish to withdraw your consent and stop hearing from us, simply click the unsubscribe link at the bottom of every email we send or contact us at support@o3.network. We value and respect your personal data and privacy. To view our privacy policy, please visit our website. By submitting this form, you agree that we may process your information in accordance with these terms.
           </div>
-          <div className='gdpr-container'>
-            <input
-              ref={ref => this.gdprInputEle = ref}
-              type='checkbox'
-              className='gdpr'
-            />
-            <div>{'Accept'}</div>
-          </div>
-
         </div>
+
+        <input name='list' defaultValue='b68SwypeRj9bMJDwa8gY892A' className='hidden'/>
+        <input name='subform' defaultValue='yes' className='hidden'/>
 
         <div className='action-container'>
           { error ?
             <div className='error'>{error}</div> :
-            <div className='button' onClick={() => this.handleSubmit()}>{`SUBMIT!`}</div>
+            <button className='button'>{`SUBMIT!`}</button>
           }
         </div>
-      </div>
+      </form>
     );
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
     const { onSubmit } = this.props;
 
     if (!this.nameInputEle.value) {
@@ -132,18 +139,7 @@ export default class Welcome extends React.Component<any, State> {
     fetch('https://sendyyyy.o3.network/subscribe', {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: this.nameInputEle.value,
-          email: this.emailInputEle.value,
-          gdpr: this.gdprInputEle.checked,
-          list: 'b68SwypeRj9bMJDwa8gY892A',
-          subform: 'yes',
-          hp: null,
-          submit: null,
-        }),
+        body: new FormData(event.target),
     })
     .then(res => onSubmit())
     .catch(err => {});

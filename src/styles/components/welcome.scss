@@ -38,6 +38,7 @@
     font-size: 0.75rem;
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
 
     input {
       margin-right: 0.5rem;
@@ -55,6 +56,10 @@
       color: red;
       font-size: 0.75rem;
     }
+  }
+
+  .hidden {
+    visibility: hidden;
   }
 }
 
